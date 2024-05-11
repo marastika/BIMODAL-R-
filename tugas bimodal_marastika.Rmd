@@ -1,0 +1,40 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+netflix=read.csv("E:\\TUGAS DATA STATISTIK DATA LANJUT\\TUGAS BINOMIAL MODAL\\NFLX.csv")
+```
+```{r}
+netflix
+```
+
+```{r}
+install.packages("devtools")
+```
+```{r}
+
+library(devtools)
+install_github("choisy/cutoff")
+library(cutoff)
+
+```
+
+
+
+```{r}
+install.packages('bbmle')
+```
+```{r}
+hist(netflix$Close)
+```
+
+
+
+
+```{r}
+out <- em(netflix$Close,"normal","normal")
+confint(out)
+```
+
